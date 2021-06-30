@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="dal.Vendor" table="vendor">
+<id name="vendorid" column="vendid"  />
+<property name="vendorname" column="vendname" length="10"/>
+
+<set name="chidren" cascade="all" >
+
+<key column="vid" />
+<one-to-many class="dal.Customer" />
+
+</set>
+
+</class>
+</hibernate-mapping>
